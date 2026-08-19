@@ -10,7 +10,7 @@ runs under Claude Code, OpenAI Codex, and any other host that reads the skill fo
 
 | Skill | What it does | Examples |
 |---|---|---|
-| [`investigate-codebase`](investigate-codebase/) | Builds an evidence-backed working model of an existing codebase. Orient in an unfamiliar repository, trace a runtime flow, analyze change impact, or verify generated code. Read-only by default. | [4 end-to-end runs](examples/investigate-codebase/) |
+| [`investigate-codebase`](investigate-codebase/) | Builds an evidence-backed working model of an existing codebase. Orient in an unfamiliar repository, trace a runtime flow, analyze change impact, or verify generated code. Read-only by default. | [5 end-to-end runs](examples/investigate-codebase/) |
 
 ### investigate-codebase
 
@@ -47,17 +47,18 @@ deliberately strict about a few things:
 
 ## Examples
 
-[`examples/`](examples/) holds real end-to-end runs against a real codebase —
-[DuckDB](https://github.com/duckdb/duckdb) — one per investigation mode. The commands are
-the commands that ran and the outputs are the outputs they printed, including the checks
-that failed or silently no-opped.
+[`examples/`](examples/) holds real end-to-end runs against real codebases —
+[DuckDB](https://github.com/duckdb/duckdb) and [vLLM](https://github.com/vllm-project/vllm).
+The commands are the commands that ran and the outputs are the outputs they printed,
+including the checks that failed or silently no-opped.
 
 | Example | Mode | What the evidence changed |
 |---|---|---|
-| [Orient in the DuckDB source](examples/investigate-codebase/01-orient-duckdb-source.md) | `ORIENT` | The in-repo architecture doc omits the component that owns query orchestration |
-| [Trace zone-map pruning](examples/investigate-codebase/02-trace-zonemap-pruning.md) | `TRACE` | Two pruning mechanisms at two layers; the first negative control silently no-opped and imitated a refutation |
-| [Impact of PR #19235](examples/investigate-codebase/03-impact-pr-19235.md) | `IMPACT` | 32× faster, results invariant — except one unspecified ordering that users do depend on |
-| [Verify a generated report query](examples/investigate-codebase/04-verify-generated-sql.md) | `VERIFY` | 6/6 tests green at 100% coverage, three real bugs, revenue inflated N× |
+| [Orient in the DuckDB source](examples/investigate-codebase/duckdb/01-orient-duckdb-source.md) | `ORIENT` | The in-repo architecture doc omits the component that owns query orchestration |
+| [Trace zone-map pruning](examples/investigate-codebase/duckdb/02-trace-zonemap-pruning.md) | `TRACE` | Two pruning mechanisms at two layers; the first negative control silently no-opped and imitated a refutation |
+| [Impact of PR #19235](examples/investigate-codebase/duckdb/03-impact-pr-19235.md) | `IMPACT` | 32× faster, results invariant — except one unspecified ordering that users do depend on |
+| [Verify a generated report query](examples/investigate-codebase/duckdb/04-verify-generated-sql.md) | `VERIFY` | 6/6 tests green at 100% coverage, three real bugs, revenue inflated N× |
+| [Trace vLLM's prefix-cache ceiling](examples/investigate-codebase/vllm/01-trace-prefix-cache-ceiling.md) | `TRACE` | A GPU-only system, investigated with no GPU: a fully cached prompt still reruns a whole block, and 49 "failures" came from the harness |
 
 ## Install
 
