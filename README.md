@@ -52,14 +52,6 @@ deliberately strict about a few things:
 The commands are the commands that ran and the outputs are the outputs they printed,
 including the checks that failed or silently no-opped.
 
-| Example | Mode | What the evidence changed |
-|---|---|---|
-| [Orient in the DuckDB source](examples/investigate-codebase/duckdb/01-orient-duckdb-source.md) | `ORIENT` | The in-repo architecture doc omits the component that owns query orchestration |
-| [Trace zone-map pruning](examples/investigate-codebase/duckdb/02-trace-zonemap-pruning.md) | `TRACE` | Two pruning mechanisms at two layers; the first negative control silently no-opped and imitated a refutation |
-| [Impact of PR #19235](examples/investigate-codebase/duckdb/03-impact-pr-19235.md) | `IMPACT` | 32× faster, results invariant — except one unspecified ordering that users do depend on |
-| [Verify a generated report query](examples/investigate-codebase/duckdb/04-verify-generated-sql.md) | `VERIFY` | 6/6 tests green at 100% coverage, three real bugs, revenue inflated N× |
-| [Trace vLLM's prefix-cache ceiling](examples/investigate-codebase/vllm/01-trace-prefix-cache-ceiling.md) | `TRACE` | A GPU-only system, investigated with no GPU: a fully cached prompt still reruns a whole block, and 49 "failures" came from the harness |
-
 ## Install
 
 Clone once:
