@@ -10,7 +10,7 @@ runs under Claude Code, OpenAI Codex, and any other host that reads the skill fo
 
 | Skill | What it does | Examples |
 |---|---|---|
-| [`investigate-codebase`](investigate-codebase/) | Builds an evidence-backed working model of an existing codebase. Orient in an unfamiliar repository, trace a runtime flow, analyze change impact, or verify generated code. Read-only by default. | [5 end-to-end runs](examples/investigate-codebase/) |
+| [`investigate-codebase`](investigate-codebase/) | Builds an evidence-backed working model of an existing codebase. Orient in an unfamiliar repository, trace a runtime flow, analyze change impact, or verify generated code. Read-only by default. | [8 end-to-end runs](examples/investigate-codebase/) |
 
 ### investigate-codebase
 

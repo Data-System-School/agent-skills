@@ -15,8 +15,8 @@ demonstrates:
   observable from a shell without building anything, with a public PR history to analyze.
 - **[vLLM](https://github.com/vllm-project/vllm)** — a GPU LLM inference server, chosen for
   the opposite constraint. It ships no wheel for the investigating machine and there is no
-  GPU on it, so the run has to find out how much evidence is still obtainable when the
-  system under investigation cannot be started.
+  GPU on it, so all four runs have to find out how much evidence is still obtainable when
+  the system under investigation cannot be started.
 
 ## Skills
 
@@ -28,7 +28,10 @@ demonstrates:
 | [02](investigate-codebase/duckdb/02-trace-zonemap-pruning.md) | DuckDB | `TRACE` | Why is a filter on one column 27× faster than the same filter on another? | Two different pruning mechanisms at two layers; the first negative control silently no-opped |
 | [03](investigate-codebase/duckdb/03-impact-pr-19235.md) | DuckDB | `IMPACT` | What does PR #19235 actually change, and what must stay the same? | 32× faster on the target shape, results invariant — except for one unspecified ordering that users do depend on |
 | [04](investigate-codebase/duckdb/04-verify-generated-sql.md) | DuckDB | `VERIFY` | Is this generated reporting query correct? | 6/6 tests green at 100% coverage, three real bugs, revenue inflated N× |
-| [01](investigate-codebase/vllm/01-trace-prefix-cache-ceiling.md) | vLLM | `TRACE` | Why does a re-sent identical prompt report a 97% prefix-cache hit rate instead of 100%? | The missing block is a deliberate reservation, not a rounding loss — and 49 test "failures" came from the harness, not from vLLM |
+| [01](investigate-codebase/vllm/01-orient-vllm-source.md) | vLLM | `ORIENT` | Where do I start reading 554,000 lines, and how much must I read? | The architecture doc's file pointers land on 14 lines of aliases; 31% of the package is one-file-per-model transcriptions |
+| [02](investigate-codebase/vllm/02-trace-prefix-cache-ceiling.md) | vLLM | `TRACE` | Why does a re-sent identical prompt report a 97% prefix-cache hit rate instead of 100%? | The missing block is a deliberate reservation, not a rounding loss — and 49 test "failures" came from the harness, not from vLLM |
+| [03](investigate-codebase/vllm/03-impact-pr-36708.md) | vLLM | `IMPACT` | What does this three-line "fix" change, and do we need an upgrade plan? | Certain cost — every multimodal prefix cache invalidated — and zero collisions actually removed |
+| [04](investigate-codebase/vllm/04-verify-generated-logitsproc.md) | vLLM | `VERIFY` | Is this generated logits processor correct? | 8/8 tests green at 100% coverage, 2/6 contract checks pass, one request's ban list leaks onto another |
 
 Reproduction steps are in each example and in the per-subject READMEs:
 [`duckdb/`](investigate-codebase/duckdb/README.md), [`vllm/`](investigate-codebase/vllm/README.md).
