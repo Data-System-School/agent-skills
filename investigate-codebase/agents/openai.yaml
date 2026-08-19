@@ -1,0 +1,14 @@
+interface:
+  display_name: Codebase Investigator
+  short_description: Trace code behavior, impact, and evidence
+  default_prompt: Use $investigate-codebase to build an evidence-backed explanation
+    of how this code path works.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
