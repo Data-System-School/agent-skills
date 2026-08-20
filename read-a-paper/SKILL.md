@@ -20,6 +20,9 @@ Depth is a decision, made up to three times — once at the end of each pass. Mo
 papers deserve pass 1 and nothing more, and that is the point of having passes, not
 laziness.
 
+The three passes, the five Cs and the literature survey are S. Keshav's; the commit gate
+built around them is not. Attribution in full: [five-cs.md](references/five-cs.md).
+
 ## Find the position
 
 Look for the sidecar notes file next to the paper. No file → the paper is new; start at
@@ -58,7 +61,9 @@ stall. Pair them — read the summary, close it, and explain the mechanism cold.
 ## The ladder
 
 Three rungs, rising budget and rising stakes. Each row links to the guide for that
-pass; load **exactly one** reference per invocation.
+pass; load **exactly one pass guide** per invocation.
+[five-cs.md](references/five-cs.md) is not a fourth guide but a shared dependency — load it
+alongside whichever guide points at it.
 
 | Pass | Budget | Exit decision | Guide |
 |---|---|---|---|
@@ -67,6 +72,22 @@ pass; load **exactly one** reference per invocation.
 | 3 | hours | done | [pass-3.md](references/pass-3.md) |
 
 Side door — a field rather than one paper: [survey.md](references/survey.md).
+
+## What the reading is for
+
+Ask before pass 1: are you deciding whether to read it, citing it, implementing it, or
+discussing it? The answer sets a floor, never a finish line — each rung's exit decision is
+still the reader's.
+
+| Reading it in order to… | Floor |
+|---|---|
+| decide whether to read it | pass 1 — deciding is exactly what pass 1 buys |
+| discuss it | pass 1, and say which depth is behind what you are saying |
+| cite it, or depend on its claim | pass 2, minimum |
+| implement it, or argue against it | pass 3 |
+
+The rule underneath the table: **do not cite past your reading depth.** Pass 1 buys a
+decision and a name; it does not buy the right to assert what the paper shows.
 
 ## The gate
 
@@ -106,6 +127,11 @@ action — open the paper, or don't — and it has to hold exactly the same on a
 with no subagents at all.
 
 **Degradation.** No subagent → read inline; the gate is unchanged. No fetch → ask for
-a local file. `Read` cannot open the PDF → ask the reader to paste the text in. Never
-substitute a weaker source — an abstract page, a blog post about the paper — for the
-paper itself and carry on silently; say which one you are actually reading.
+a local file. `Read` cannot open the PDF → ask the reader to paste the text in. When even
+that is unavailable, the rung does not run: say so and stop.
+
+Never substitute a weaker source for the paper — an abstract page, a publisher's landing
+page, a blog post about the paper. Reading one of those is not reading the paper, and
+saying out loud that you did it does not make it one; while `sealed` it is a secondary
+account, which the gate forbids outright. Separately, and at every stage: name the file or
+URL you actually opened.

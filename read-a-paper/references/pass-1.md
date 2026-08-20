@@ -26,8 +26,13 @@ Frontmatter is **state**: it changes as the paper moves through the ladder. The 
 what makes "no backdating" (below) enforceable — a state field can move forward; a
 paragraph already in the body cannot be rewritten after the fact.
 
-Create the file with this template. Fill in the frontmatter; leave the HTML comments in
-the body as prompts until the reader replaces them with their own words.
+Create the file with this template. Leave the HTML comments in the body as prompts until
+the reader replaces them with their own words.
+
+Fill the frontmatter from what is already in hand. `paper:` comes from the reader or from
+the filename — never from opening the paper to check, which is the act the gate forbids
+below; if neither supplies it, leave the placeholder and fill it once `committed`.
+`secondary:` is whatever entry triage established, not the template's default.
 
 ```markdown
 ---
@@ -118,7 +123,9 @@ not open the paper.
 
 ### `committed`
 
-All five slots have content, plus a Decision. Content includes a **named failure**:
+All five slots hold the reader's own words, plus a Decision. **Every slot still holding
+only an HTML comment means uncommitted** — the prompt is not an answer, and neither is the
+prompt with a word appended to it. Content includes a **named failure**:
 `UNANSWERED — ran out of time before the conclusions` is a commit; a blank is not.
 
 This isn't a formality. [five-cs.md](five-cs.md) gives the rule this comes from: failing
@@ -161,7 +168,10 @@ One caveat, and state it whenever it applies: if `secondary: used` — the reade
 came from a summary rather than the paper itself — agreement between the two answers is
 not evidence of anything. They may simply share a source. Say so in the report.
 
-Close by updating `Decision, revised`: unchanged, or changed — and by which divergence.
+Close by updating `Decision, revised`: unchanged, or changed — and by which divergence. A
+decision that *flips* — going to stop, then the skill names the paper this one argues with
+and pass 2 is suddenly worth an hour — is the clearest single measure of whether the
+contrast was worth running, and it costs one line to record.
 
 Then move the frontmatter to match it, in one edit. Stop here → `stage: contrasted`, `pass:`
 left at 1; the paper is finished, and stopping is the result. Read on → `pass: 2` and
@@ -175,10 +185,10 @@ The gate gets tested directly, in conversation. Refuse in **one sentence, no lec
 A second refusal in the same conversation is **shorter than the first, never longer** —
 repetition is not an invitation to justify further.
 
-- *"Just give me the five Cs."* Refused. The paper isn't open — here is the empty
+- *"Just give me the five Cs."* Refused — the paper isn't open; here is the empty
   template instead.
-- *"I'll fill it in afterwards, tell me the gist now."* Refused. That's backdating with
+- *"I'll fill it in afterwards, tell me the gist now."* Refused — that's backdating with
   extra steps: the commit exists before the read, never reconstructed after it.
-- *"Read it first and give me a few Category options to pick from."* Refused. A
+- *"Read it first and give me a few Category options to pick from."* Refused — a
   shortlist read off the paper is the skill choosing the answer and handing it back as a
   menu.

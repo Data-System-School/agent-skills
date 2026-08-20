@@ -74,10 +74,17 @@ unable to state the paper's contribution, that's evidence about the paper at lea
 often as it's evidence about you. Record *which* — it decides what you do next: return
 with more background of your own, or reach for a summary of the paper instead.
 
+## The ten-minute rule
+
 If you cannot answer all five in ten minutes, either the paper is badly written or you
-stopped too early. Both are results.
+stopped too early. Both are results, and which one it was is worth recording — a blank slot
+erases the difference, a named failure keeps it.
 
 ## Worked: the LSM-Tree paper in ten minutes
+
+If the paper in front of the reader **is** this one, skip this section and do not quote from
+it. What follows is a filled-in five-C answer key; handing it over while `sealed` ends the
+gate as completely as reading the paper aloud would.
 
 O'Neil, Cheng, Gawlick and O'Neil, *The Log-Structured Merge-Tree* (1996). Here is what a
 real pass 1 produces, before you have read one body section:
@@ -111,3 +118,13 @@ last fact is already a question worth its own experiment: *does the write cost w
 survive on flash?* You didn't answer the question — you earned the right to ask it. The
 RocksDB paper, twenty-five years of production evidence about exactly this, is a natural
 next read.
+
+## Source
+
+The three passes, the five Cs and the literature survey are S. Keshav's, from
+["How to Read a Paper"](https://web.stanford.edu/class/cs245/readings/how-to-read-a-paper.pdf),
+*ACM SIGCOMM Computer Communication Review* 37(3), July 2007 (revised February 2016) — two
+pages, and worth a pass 2 of its own. This skill follows him closely on them.
+
+Not his, and not to be attributed to him: the trap column above, the worked example above,
+and the commit gate the skill wraps around the whole method.
