@@ -21,6 +21,11 @@ gets `lsm-tree.notes.md`. If the source is a URL with no local file to sit besid
 notes file lands in the working directory instead — and the skill says that path out
 loud, once, the first time it creates the file.
 
+If the notes file's frontmatter carries a `phase:` field, it belongs to the course skill.
+The course skill withholds the five Cs for course papers because the learner is meant to
+predict them — this skill produces them. This skill does not process course papers. Do not
+remove the field to proceed.
+
 Frontmatter is **state**: it changes as the paper moves through the ladder. The body is
 **record**: once a section is written, it is appended to, never edited. That split is
 what makes "no backdating" (below) enforceable — a state field can move forward; a
