@@ -29,8 +29,19 @@ conversation, and not anything said earlier in it.
 
 ## Entry triage
 
-Before pass 1, ask whether trustworthy secondary material already exists for this
-paper — a survey, a distillation, the authors' own talk.
+Before pass 1, establish whether trustworthy secondary material exists for this paper — a
+survey, a distillation, the authors' own talk. **Establishing *whether* one exists is the
+whole of triage.** Do not open it, skim it, quote it, or answer out of it: while `sealed`
+the gate covers the paper and every secondary account of it alike, because a distillation
+carries all five Cs and handing one over ends the gate exactly as reading the paper would.
+
+Record the finding in the notes file's `secondary` field — `none`, or `exists-unread` when
+one was found. If the reader says their own answers came out of that material rather than
+the paper, set `secondary: used`; that value changes how the divergence report must be
+read, and the report has to say so.
+
+The table below is advice **to the reader** about their own reading, and it applies to the
+reading they do after they have committed. It grants this skill nothing.
 
 | Secondary material… | …stands in for |
 |---|---|
@@ -39,10 +50,10 @@ paper — a survey, a distillation, the authors' own talk.
 | pass 3 | **No.** Reading someone else's re-creation is a different act with a different result |
 | running the claim yourself | **Never** |
 
-The risk is the reason the table is not just permission: these summaries are easy to
-read, and easy is the problem. Struggling through an original tells you where your
-model is thin; a fluent summary tells you nothing, because it never lets you stall.
-Pair them — read the summary, close it, and explain the mechanism cold.
+The risk is the reason the table is not just permission, even for the reader: these
+summaries are easy to read, and easy is the problem. Struggling through an original tells
+you where your model is thin; a fluent summary tells you nothing, because it never lets you
+stall. Pair them — read the summary, close it, and explain the mechanism cold.
 
 ## The ladder
 
