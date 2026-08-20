@@ -71,7 +71,8 @@ builds a reading list around a field instead of one paper.
 The skill is deliberately strict about a few things:
 
 - **The paper is not opened before you commit.** The gate is on reading, not on
-  speaking, because most leaks are questions rather than statements.
+  speaking, because a leak rarely takes the form of a stated answer — the rule
+  attaches to an auditable action instead.
 - **Not answering is a valid commit; a blank is not.** `UNANSWERED — ran out of time`
   is a finding. Silence records nothing.
 - **Agreement gets one line.** Elaborating where you and the skill already agree is a
