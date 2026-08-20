@@ -1,0 +1,14 @@
+interface:
+  display_name: Paper Reader
+  short_description: Three-pass reading, one decision at a time
+  default_prompt: Use $read-a-paper to work through this paper one pass at a time,
+    starting with my own five Cs.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
