@@ -11,6 +11,7 @@ runs under Claude Code, OpenAI Codex, and any other host that reads the skill fo
 | Skill | What it does | Examples |
 |---|---|---|
 | [`investigate-codebase`](investigate-codebase/) | Builds an evidence-backed working model of an existing codebase. Orient in an unfamiliar repository, trace a runtime flow, analyze change impact, or verify generated code. Read-only by default. | [8 end-to-end runs](examples/investigate-codebase/) |
+| [`read-a-paper`](read-a-paper/) | Runs the three-pass method as a ladder with a stop-or-continue decision at every rung. You commit your own five Cs before it opens the paper; it then reads independently and discusses only where you diverge. | — |
 
 ### investigate-codebase
 
@@ -44,6 +45,42 @@ deliberately strict about a few things:
   timed-out, and credential-blocked checks are reported rather than quietly dropped.
 - **No uncalibrated correctness percentage.** Conclusions are conditional: at revision X
   in environment Y, evidence supports Z for scenarios A and B; C remains unverified.
+
+### read-a-paper
+
+Asking an AI to explain a paper produces a fluent summary that never lets you stall, so
+you finish feeling informed with no idea what you failed to understand. This skill
+optimizes for the opposite: your own reading, committed before the paper is opened, then
+checked against a second, independent reading rather than replaced by one.
+
+The ladder is three rungs, each ending in its own decision:
+
+| Pass | Budget | Exit decision |
+|---|---|---|
+| 1 | 5–10 min | read on / stop here — stopping is a result, not a failure |
+| 2 | ≤ 1 hr | set aside / come back later / go to pass 3 |
+| 3 | hours | done |
+
+A sidecar notes file tracks position outside the conversation, through three gate
+states: `sealed` (the paper is not yet opened), `committed` (the reader's own five Cs —
+category, context, correctness, contributions, clarity — are on record, including any
+the reader could not answer), and `contrasted` (the skill has read the paper and logged
+where its own five Cs diverge from the reader's). A side door, entered before pass 1,
+builds a reading list around a field instead of one paper.
+
+The skill is deliberately strict about a few things:
+
+- **The paper is not opened before you commit.** The gate is on reading, not on
+  speaking, because most leaks are questions rather than statements.
+- **Not answering is a valid commit; a blank is not.** `UNANSWERED — ran out of time`
+  is a finding. Silence records nothing.
+- **Agreement gets one line.** Elaborating where you and the skill already agree is a
+  distillation by the back door.
+- **The survey may be delegated; the reading may not.** Every paper a survey produces
+  enters the ladder sealed.
+- **Stopping after pass 1 is a result.** Most papers deserve exactly that.
+- **It will not run the experiment for you, and says so.** A paper is a very good
+  reason to run one; it is not one.
 
 ## Examples
 
