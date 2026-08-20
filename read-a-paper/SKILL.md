@@ -34,7 +34,9 @@ conversation, and not anything said earlier in it.
 
 Before pass 1, establish whether trustworthy secondary material exists for this paper — a
 survey, a distillation, the authors' own talk. **Establishing *whether* one exists is the
-whole of triage.** Do not open it, skim it, quote it, or answer out of it: while `sealed`
+whole of triage.** Judge it on provenance — who wrote it, where it was published, whether
+it is the authors' own — and never on its content: opening it to decide whether it is any
+good is opening it. Do not open it, skim it, quote it, or answer out of it: while `sealed`
 the gate covers the paper and every secondary account of it alike, because a distillation
 carries all five Cs and handing one over ends the gate exactly as reading the paper would.
 
@@ -127,8 +129,10 @@ action — open the paper, or don't — and it has to hold exactly the same on a
 with no subagents at all.
 
 **Degradation.** No subagent → read inline; the gate is unchanged. No fetch → ask for
-a local file. `Read` cannot open the PDF → ask the reader to paste the text in. When even
-that is unavailable, the rung does not run: say so and stop.
+a local file. `Read` cannot open the PDF → ask the reader to paste the text in, and ask
+once `committed`, never before — a paste while `sealed` puts the paper in front of you
+exactly as a successful read would, and the gate does not care which tool delivered it.
+When even the paste is unavailable, the rung does not run: say so and stop.
 
 Never substitute a weaker source for the paper — an abstract page, a publisher's landing
 page, a blog post about the paper. Reading one of those is not reading the paper, and
