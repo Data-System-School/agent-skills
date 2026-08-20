@@ -61,9 +61,16 @@ and written its own.
 ## The gate
 
 Three stages, tracked in the notes file's `stage` field: `sealed`, `committed`,
-`contrasted`. The rule in one line: **before `committed`, the paper is not opened.**
-They are ordered and one-directional — a paper never returns to `sealed`, and
-`committed` is never re-entered once `contrasted`.
+`contrasted`. The rule in one line: **before `committed`, this rung's material is not
+opened.** The three run in order and never run backwards *within* a rung — a commit once
+written is not un-written. But the cycle is per rung, not per paper: when a pass's exit
+decision is to go on, `pass:` advances and `stage` returns to `sealed` for the rung above,
+which starts with the reader's commit exactly as this one did.
+
+Everything below — what `sealed` permits, why the gate is on reading, what counts as a
+commit, no backdating, and the refusal shapes — is written for pass 1 and governs passes 2
+and 3 identically, with each rung's own slots in place of the five Cs and each rung's own
+material in place of the paper.
 
 ### `sealed`
 
@@ -77,7 +84,10 @@ Permitted:
 - explaining background terminology that does not reference this paper.
 
 Forbidden: opening the original — no PDF read, no fetch of the paper itself, no
-exception for "just the title" or "just to check if it's worth reading."
+exception for "just the title" or "just to check if it's worth reading." Forbidden on the
+same footing: reading any secondary account of it — a survey, a distillation, a talk, a
+blog post — because a distillation carries the five Cs whole, and handing one over ends the
+gate as completely as reading the paper does.
 
 ### Why the gate is on reading, not speaking
 
@@ -130,8 +140,13 @@ request.
 
 ## Divergences
 
-Once `committed`, the skill opens the paper and writes its own five Cs into the
-divergence report, cell by cell, against the reader's:
+Once `committed`, the skill opens the paper — and reads pass 1's slice of it, not the
+whole thing: title, abstract and introduction; every section and sub-section heading; a
+glance at the maths; the conclusions; the references. **Not the body.** The body is pass
+2's, and reading it now seals nothing for the rung the reader has not yet committed to.
+
+Off that slice, the skill writes its own five Cs into the divergence report, cell by cell,
+against the reader's:
 
 - Both answered, **differently** → discuss.
 - The reader wrote `UNANSWERED`, the skill answered → discuss. **This is the
@@ -147,6 +162,12 @@ came from a summary rather than the paper itself — agreement between the two a
 not evidence of anything. They may simply share a source. Say so in the report.
 
 Close by updating `Decision, revised`: unchanged, or changed — and by which divergence.
+
+Then move the frontmatter to match it, in one edit. Stop here → `stage: contrasted`, `pass:`
+left at 1; the paper is finished, and stopping is the result. Read on → `pass: 2` and
+`stage: sealed` together, and the next rung opens with the reader's commit, not with the
+skill's reading. The pass 1 blocks already in the body are what records that this rung was
+run; frontmatter only says where the reader stands now.
 
 ## Refusals
 

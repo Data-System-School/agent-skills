@@ -22,10 +22,10 @@ laziness.
 
 ## Find the position
 
-Look for the sidecar notes file next to the paper. No file → pass 0, start at entry
-triage below. A file → read its frontmatter `stage` and `pass`, and resume there. The
-notes file is the source of truth for position — not this conversation, and not
-anything said earlier in it.
+Look for the sidecar notes file next to the paper. No file → the paper is new; start at
+entry triage below. A file → read its frontmatter `stage` and `pass`, and resume at that
+rung, in that stage. The notes file is the source of truth for position — not this
+conversation, and not anything said earlier in it.
 
 ## Entry triage
 
@@ -57,13 +57,36 @@ pass; load **exactly one** reference per invocation.
 
 Side door — a field rather than one paper: [survey.md](references/survey.md).
 
-## The gate, in brief
+## The gate
 
-Three stages, tracked in the notes file: `sealed` → `committed` → `contrasted`.
-`sealed` ends once the reader has committed their own five Cs — see
-[five-cs.md](references/five-cs.md). The rule in one line: **before `committed`, the
-paper is not opened.** Full rules — why the gate polices an action and not a
-sentence, backdating, refusals — live in [pass-1.md](references/pass-1.md).
+Three stages, tracked in the notes file's frontmatter: `sealed` → `committed` →
+`contrasted`. The cycle is **per rung, not per paper**. Every rung starts at `sealed`, and
+the ladder re-enters it there each time `pass:` advances.
+
+The invariant, and it holds identically at all three rungs: **while `stage: sealed`,
+nothing that rung would read is opened — not the paper, and not any secondary account of
+it.** `sealed` ends when the reader's own slots for *that* pass have content; at pass 1
+those slots are the five Cs — see [five-cs.md](references/five-cs.md). `contrasted` begins
+once that pass's divergence report and revised decision both exist.
+
+Once `committed`, read what that rung covers and nothing beyond it:
+
+- **Pass 1** — title, abstract and introduction; every heading; a glance at the maths; the
+  conclusions; the references. Not the body.
+- **Pass 2** — the body, the figures closely, and the references not yet read. Not the
+  proofs.
+- **Pass 3** — everything, proofs included, re-derived rather than followed.
+
+Handed a whole PDF at pass 1, an agent that reads all of it has broken the gate for passes
+2 and 3 before the reader has committed to either.
+
+Advancing a rung is one edit to the frontmatter: `pass:` to the next number and `stage:`
+back to `sealed`, together. The body keeps the record of what was finished; frontmatter
+says only where the reader stands now.
+
+Why the gate polices an action and not a sentence, what counts as a commit, no backdating,
+and the shape of a refusal are in [pass-1.md](references/pass-1.md). Those sections govern
+every rung, not only the first — read them at whichever rung you enter on.
 
 Where the host provides one, prefer a subagent for the reading itself, so the paper
 never enters the main conversation and the gate is structural rather than
